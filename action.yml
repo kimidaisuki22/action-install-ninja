@@ -4,16 +4,19 @@ runs:
   using: "composite"
   steps:
     - name: Install Ninja(windows)
+      shell: bash
       if: ${{ runner.os == 'Windows' }}
       run: |
         choco install ninja
 
     - name: Install Ninja(Linux)
+      shell: bash
       if: ${{ runner.os == 'Linux' }}
       run: |
         sudo apt-get install -y ninja-build
 
     - name: Install Ninja(macOS)
+      shell: bash
       if: ${{ runner.os == 'macOS' }}
       run: |
         brew install ninja
